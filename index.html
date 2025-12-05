@@ -1,117 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Página Informativa</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background: #f5f5f5;
-    }
-    h1 {
-        text-align: center;
-    }
-    .card {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .leer-mas {
-        color: blue;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    .oculto {
-        display: none;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapia en Acción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f9ff;
+            color: #003049;
+        }
+        header {
+            background: linear-gradient(135deg, #1f8ef1, #3bc9db);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+        nav {
+            background: #e3f2fd;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-weight: bold;
+        }
+        nav a {
+            color: #00509d;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0077b6;
+        }
+        .post {
+            background: #f8fbff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 6px solid #1f8ef1;
+        }
+        .leer-mas {
+            display: inline-block;
+            margin-top: 10px;
+            background: #1f8ef1;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        .leer-mas:hover {
+            background: #0b74d9;
+        }
+        .oculto {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            background: #1f8ef1;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        function toggleTexto(id) {
+            const texto = document.getElementById(id);
+            texto.style.display = texto.style.display === "none" ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
 
-<h1>Información General</h1>
+<header>
+    <h1>Fisioterapia en Acción</h1>
+    <p>Atención profesional – Resultados reales – Tu salud es primero</p>
+</header>
 
-<div class="card">
-    <h2>1. ¿Qué es la salud?</h2>
-    <p>La salud es un estado de completo bienestar físico, mental y social, y no solamente la ausencia de enfermedad.</p>
-    <span class="leer-mas" onclick="toggleTexto('t1')">Leer más...</span>
-    <div id="t1" class="oculto">
-        <p>Este concepto fue establecido por la OMS y destaca la importancia de factores emocionales, sociales y económicos. También incluye la capacidad funcional y el equilibrio del organismo.</p>
-    </div>
-</div>
+<nav>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#casos">Casos clínicos</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
-<div class="card">
-    <h2>2. Servicios de Salud</h2>
-    <p>Los servicios de salud incluyen todas las acciones organizadas para proteger, mejorar o restaurar la salud.</p>
-    <span class="leer-mas" onclick="toggleTexto('t2')">Leer más...</span>
-    <div id="t2" class="oculto">
-        <p>Estos servicios pueden ser públicos o privados, e incluyen prevención, diagnóstico, tratamiento, rehabilitación y cuidados paliativos. Su eficiencia determina la calidad de vida de una población.</p>
-    </div>
-</div>
+<main>
 
-<div class="card">
-    <h2>3. Importancia de la prevención</h2>
-    <p>La prevención ayuda a reducir riesgos y evitar enfermedades antes de que aparezcan.</p>
-    <span class="leer-mas" onclick="toggleTexto('t3')">Leer más...</span>
-    <div id="t3" class="oculto">
-        <p>Incluye vacunación, controles periódicos, alimentación saludable, actividad física y educación sanitaria. Es la base de un sistema de salud sostenible y eficiente.</p>
-    </div>
-</div>
+    <section id="sobre">
+        <h2>Sobre mí</h2>
+        <p>Soy un profesional de la fisioterapia con experiencia en rehabilitación músculo-esquelética, respiratoria y neurológica. Mi objetivo es ayudarte a recuperar tu movilidad, disminuir el dolor y mejorar tu calidad de vida con técnicas actualizadas y tratamientos personalizados.</p>
+    </section>
 
-<div class="card">
-    <h2>4. Factores que influyen en la salud</h2>
-    <p>La salud está influenciada por el entorno, estilo de vida, genética y servicios disponibles.</p>
-    <span class="leer-mas" onclick="toggleTexto('t4')">Leer más...</span>
-    <div id="t4" class="oculto">
-        <p>Los determinantes sociales como vivienda, trabajo, educación y acceso a agua potable tienen un impacto enorme. El estrés y la calidad del sueño también influyen directamente.</p>
-    </div>
-</div>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <ul>
+            <li>✔ Rehabilitación física personalizada</li>
+            <li>✔ Terapia manual y masoterapia</li>
+            <li>✔ Ejercicio terapéutico</li>
+            <li>✔ Fisioterapia respiratoria</li>
+            <li>✔ Atención a domicilio</li>
+        </ul>
+    </section>
 
-<div class="card">
-    <h2>5. Derechos del paciente</h2>
-    <p>Todo paciente tiene derecho a recibir atención digna, respetuosa y confidencial.</p>
-    <span class="leer-mas" onclick="toggleTexto('t5')">Leer más...</span>
-    <div id="t5" class="oculto">
-        <p>Incluye el derecho a la información, a la autonomía, a la privacidad, y a recibir un trato sin discriminación. El consentimiento informado es parte esencial de estos derechos.</p>
-    </div>
-</div>
+    <section id="casos">
+        <h2>Casos clínicos</h2>
 
-<div class="card">
-    <h2>6. Actividad física y salud</h2>
-    <p>La actividad física regular mejora la fuerza, movilidad y salud cardiovascular.</p>
-    <span class="leer-mas" onclick="toggleTexto('t6')">Leer más...</span>
-    <div id="t6" class="oculto">
-        <p>Se recomienda al menos 150 minutos de actividad moderada por semana. Reduce el riesgo de enfermedades crónicas como diabetes, hipertensión y obesidad.</p>
-    </div>
-</div>
+        <article class="post">
+            <h3>Rehabilitación en lumbalgia crónica</h3>
+            <p>Paciente con dolor lumbar persistente por más de 6 meses.</p>
+            <a class="leer-mas" onclick="toggleTexto('caso1')">Leer más</a>
+            <p id="caso1" class="oculto">Se aplicó terapia manual, estiramientos activos, fortalecimiento de core y reeducación postural. La evolución fue positiva desde la segunda semana.</p>
+        </article>
 
-<div class="card">
-    <h2>7. Salud mental</h2>
-    <p>La salud mental es igual de importante que la salud física.</p>
-    <span class="leer-mas" onclick="toggleTexto('t7')">Leer más...</span>
-    <div id="t7" class="oculto">
-        <p>Incluye bienestar emocional, capacidad de manejar el estrés y relaciones sanas. La depresión y ansiedad son problemas comunes que requieren atención adecuada.</p>
-    </div>
-</div>
+        <article class="post">
+            <h3>Fortalecimiento respiratorio en paciente post-COVID</h3>
+            <p>Disnea, fatiga y saturación reducida al esfuerzo.</p>
+            <a class="leer-mas" onclick="toggleTexto('caso2')">Leer más</a>
+            <p id="caso2" class="oculto">Se trabajó con técnicas de expansión torácica, espirometría incentivada y control diafragmático durante 4 semanas con excelente recuperación.</p>
+        </article>
 
-<div class="card">
-    <h2>8. Alimentación saludable</h2>
-    <p>Una dieta equilibrada contribuye al buen funcionamiento del cuerpo.</p>
-    <span class="leer-mas" onclick="toggleTexto('t8')">Leer más...</span>
-    <div id="t8" class="oculto">
-        <p>Incluir frutas, verduras, proteínas magras y granos integrales mejora la energía, fortalece el sistema inmune y evita enfermedades.</p>
-    </div>
-</div>
+    </section>
 
-<script>
-    function toggleTexto(id) {
-        const element = document.getElementById(id);
-        element.classList.toggle('oculto');
-    }
-</script>
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <p>⭐⭐⭐⭐⭐ "Un excelente profesional, mi dolor desapareció en 3 sesiones."</p>
+        <p>⭐⭐⭐⭐⭐ "Explica todo con paciencia, recomendado 100%."</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p><strong>Email:</strong> tomflow13@gmail.com</p>
+        <p><strong>WhatsApp:</strong> 0992568815</p>
+        <p>Te responderé lo antes posible.</p>
+    </section>
+
+</main>
+
+<footer>
+    © 2025 Fisioterapia en Acción – Desarrollado para tu bienestar
+</footer>
 
 </body>
 </html>
