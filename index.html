@@ -1,93 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página con Leer Más</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapia en Acción</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #f4f4f4;
             margin: 0;
-            padding: 20px;
-            background: #f5f5f5;
+            padding: 0;
         }
 
-        .card {
+        header {
+            background: #2c7a7b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        nav {
+            background: #205558;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .post {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            background: #2c7a7b;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            background: #205558;
         }
 
         .hidden {
             display: none;
         }
 
-        .btn {
-            background: #007bff;
+        footer {
+            background: #2c7a7b;
+            padding: 20px;
             color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            text-align: center;
+            margin-top: 40px;
         }
     </style>
+
+    <script>
+        function toggleText(id) {
+            const extra = document.getElementById(id);
+            extra.classList.toggle("hidden");
+        }
+    </script>
 </head>
+
 <body>
 
-<div class="card">
-    <h2>Título del artículo</h2>
+<header>
+    <h1>Fisioterapia en Acción</h1>
+    <p>Tu salud y bienestar en movimiento</p>
+</header>
 
-    <!-- Imagen principal incluida por el usuario -->
-    <img src="IMG_20241204_190240.jpg" alt="Imagen 1" />
-    <img src="IMG_20241204_190218.jpg" alt="Imagen 2" />
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contacto</a>
+</nav>
 
-    <p>
-        Este es el texto inicial visible para todos. Aquí introduces la información más
-        importante de tu contenido.
-    </p>
+<div class="container">
 
-    <!-- CONTENIDO OCULTO -->
-    <div id="extra" class="hidden">
-        <p>
-            Aquí aparece todo el texto adicional después de dar clic en "Leer más".
-            Puedes poner todo lo que quieras: más párrafos, listas, imágenes,
-            explicaciones largas, etc.
-        </p>
+    <!-- ========== PUBLICACIÓN 1 ========== -->
+    <div class="post">
+        <h2>¿Qué es la fisioterapia?</h2>
+        <p>La fisioterapia es una disciplina que busca mejorar la movilidad y disminuir el dolor...</p>
 
-        <p>
-            Este contenido ahora sí se mostrará cuando pulses el botón.
-        </p>
+        <img src="https://raw.githubusercontent.com/tomflow13-source/fisioterapiaenaccion/main/Gemini_Generated_Image_dw0aiydw0aiydw0a.png" alt="Fisioterapia imagen 1">
 
-        <!-- Si quieres agregar más imágenes, colócalas aquí -->
-        <img src="IMG_20241204_190240.jpg" alt="Imagen extra" />
+        <button class="read-more" onclick="toggleText('post1')">Leer más</button>
+
+        <div id="post1" class="hidden">
+            <p>
+                La fisioterapia es fundamental para tratar lesiones musculares, articulares y neurológicas. 
+                Su objetivo principal es recuperar la movilidad, disminuir el dolor y mejorar la funcionalidad 
+                a través de ejercicios terapéuticos, técnicas manuales, estiramientos, masoterapia y educación 
+                postural. También contribuye a prevenir futuras lesiones mediante planes de fortalecimiento 
+                personalizados.
+            </p>
+            <p>
+                Es una disciplina esencial para personas con lesiones deportivas, problemas de columna, 
+                rehabilitación postquirúrgica, contracturas y enfermedades crónicas.
+            </p>
+        </div>
     </div>
 
-    <button id="btnLeer" class="btn">Leer más</button>
+    <!-- ========== PUBLICACIÓN 2 ========== -->
+    <div class="post">
+        <h2>Fisioterapia respiratoria</h2>
+        <p>La fisioterapia respiratoria mejora la capacidad pulmonar y la eficiencia al respirar...</p>
+
+        <img src="https://raw.githubusercontent.com/tomflow13-source/fisioterapiaenaccion/main/Gemini_Generated_Image_uyapl0uyapl0uyap.png" alt="Fisioterapia respiratoria">
+
+        <button class="read-more" onclick="toggleText('post2')">Leer más</button>
+
+        <div id="post2" class="hidden">
+            <p>
+                La fisioterapia respiratoria ayuda a personas con enfermedades pulmonares, debilidad muscular 
+                o limitación respiratoria. Incluye ejercicios diafragmáticos, expansión torácica, drenaje 
+                postural, espiración lenta prolongada y uso de dispositivos como incentivadores respiratorios.
+            </p>
+            <p>
+                Su objetivo es mejorar la oxigenación, disminuir la fatiga, fortalecer la musculatura respiratoria 
+                y optimizar la ventilación pulmonar.
+            </p>
+        </div>
+    </div>
+
 </div>
 
-<script>
-    const extra = document.getElementById('extra');
-    const btn = document.getElementById('btnLeer');
-
-    btn.addEventListener('click', () => {
-        if (extra.classList.contains('hidden')) {
-            extra.classList.remove('hidden');
-            btn.textContent = 'Leer menos';
-        } else {
-            extra.classList.add('hidden');
-            btn.textContent = 'Leer más';
-        }
-    });
-</script>
+<footer>
+    <p>Contacto: <strong>tomflow13@gmail.com</strong> | <strong>0992568815</strong></p>
+    <p>Fisioterapia en Acción © 2025</p>
+</footer>
 
 </body>
 </html>
