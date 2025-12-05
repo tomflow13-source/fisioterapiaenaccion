@@ -1,126 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fisioterapia Integral - Prevención y Rehabilitación</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página con Leer Más</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f4f4f4;
-    }
-    header {
-        background: #0077b6;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-    }
-    .section {
-        padding: 20px;
-        background: white;
-        margin: 15px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .images-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-    .images-grid img {
-        width: 100%;
-        border-radius: 10px;
-    }
-    #extra {
-        display: none;
-        margin-top: 10px;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    .btn {
-        background: #0077b6;
-        color: white;
-        border: none;
-        padding: 10px 18px;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-    footer {
-        background: #023e8a;
-        padding: 20px;
-        color: white;
-        text-align: center;
-        margin-top: 20px;
-    }
-</style>
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
 
-<script>
-function verMas() {
-    let extra = document.getElementById("extra");
-    let btn = document.getElementById("btnMas");
+        .hidden {
+            display: none;
+        }
 
-    if (extra.style.display === "none") {
-        extra.style.display = "block";
-        btn.innerHTML = "Leer menos";
-    } else {
-        extra.style.display = "none";
-        btn.innerHTML = "Leer más";
-    }
-}
-</script>
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    FISIOTERAPIA INTEGRAL  
-</header>
+<div class="card">
+    <h2>Título del artículo</h2>
 
-<div class="section">
-    <h2>Prevención de Lesiones</h2>
+    <!-- Imagen principal incluida por el usuario -->
+    <img src="IMG_20241204_190240.jpg" alt="Imagen 1" />
+    <img src="IMG_20241204_190218.jpg" alt="Imagen 2" />
+
     <p>
-        Movimiento inteligente para una vida plena y sin dolor.
+        Este es el texto inicial visible para todos. Aquí introduces la información más
+        importante de tu contenido.
     </p>
 
-    <div class="images-grid">
-        <img src="https://i.imgur.com/N02fJoG.png">
-        <img src="https://i.imgur.com/9nGzTTd.png">
+    <!-- CONTENIDO OCULTO -->
+    <div id="extra" class="hidden">
+        <p>
+            Aquí aparece todo el texto adicional después de dar clic en "Leer más".
+            Puedes poner todo lo que quieras: más párrafos, listas, imágenes,
+            explicaciones largas, etc.
+        </p>
+
+        <p>
+            Este contenido ahora sí se mostrará cuando pulses el botón.
+        </p>
+
+        <!-- Si quieres agregar más imágenes, colócalas aquí -->
+        <img src="IMG_20241204_190240.jpg" alt="Imagen extra" />
     </div>
+
+    <button id="btnLeer" class="btn">Leer más</button>
 </div>
 
-<div class="section">
-    <h2>Servicios de Fisioterapia</h2>
+<script>
+    const extra = document.getElementById('extra');
+    const btn = document.getElementById('btnLeer');
 
-    <div class="images-grid">
-        <img src="https://i.imgur.com/Be5z0mO.png">
-        <img src="https://i.imgur.com/zhc5tCk.png">
-    </div>
-
-    <button class="btn" id="btnMas" onclick="verMas()">Leer más</button>
-
-    <div id="extra">
-        <p>
-            Ofrezco evaluación funcional completa, terapia manual, fortalecimiento,
-            entrenamiento correctivo, rehabilitación deportiva, electroterapia y terapia
-            acuática para mejorar tu movilidad, reducir el dolor y prevenir recaídas.
-        </p>
-        <p>
-            Mi objetivo es recuperar tu bienestar de forma segura y personalizada.
-        </p>
-    </div>
-</div>
-
-<footer>
-    <h3>Contacto</h3>
-    <p>Email: <b>tomflow13@gmail.com</b></p>
-    <p>Teléfono / WhatsApp: <b>0992568815</b></p>
-</footer>
+    btn.addEventListener('click', () => {
+        if (extra.classList.contains('hidden')) {
+            extra.classList.remove('hidden');
+            btn.textContent = 'Leer menos';
+        } else {
+            extra.classList.add('hidden');
+            btn.textContent = 'Leer más';
+        }
+    });
+</script>
 
 </body>
 </html>
